@@ -1,0 +1,182 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.express",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.express",
+        "description": "plotly.express",
+        "detail": "plotly.express",
+        "documentation": {}
+    },
+    {
+        "label": "load_data",
+        "importPath": "modules.data_loader",
+        "description": "modules.data_loader",
+        "isExtraImport": true,
+        "detail": "modules.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "display_metrics",
+        "importPath": "modules.utils",
+        "description": "modules.utils",
+        "isExtraImport": true,
+        "detail": "modules.utils",
+        "documentation": {}
+    },
+    {
+        "label": "filter_data",
+        "importPath": "modules.filters",
+        "description": "modules.filters",
+        "isExtraImport": true,
+        "detail": "modules.filters",
+        "documentation": {}
+    },
+    {
+        "label": "plot_countries_by_funding",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_funding_by_market",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_funding_distribution_by_status",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_startup_by_state_of_usa",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_startup_distribution_by_countries",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "load_usa_data",
+        "importPath": "modules.data_usa_load",
+        "description": "modules.data_usa_load",
+        "isExtraImport": true,
+        "detail": "modules.data_usa_load",
+        "documentation": {}
+    },
+    {
+        "label": "load_data",
+        "kind": 2,
+        "importPath": "modules.data_loader",
+        "description": "modules.data_loader",
+        "peekOfCode": "def load_data():\n    \"\"\"\n    Load the data from the csv file\n    \"\"\"\n    data=pd.read_csv(\"data/startup_clean_file1.csv\")\n    if data is not None:\n        return data\n    else: \n        return \"No data found\"",
+        "detail": "modules.data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_usa_data",
+        "kind": 2,
+        "importPath": "modules.data_usa_load",
+        "description": "modules.data_usa_load",
+        "peekOfCode": "def load_usa_data(df):\n    usa_df=df[df['country_code']=='USA']\n    # find the number od startup in each state of the usa\n    state_counts=usa_df['state_code'].value_counts().reset_index()\n    state_counts.columns=['state_code','startup_count']\n    return state_counts",
+        "detail": "modules.data_usa_load",
+        "documentation": {}
+    },
+    {
+        "label": "filter_data",
+        "kind": 2,
+        "importPath": "modules.filters",
+        "description": "modules.filters",
+        "peekOfCode": "def filter_data(title,option_list):\n    selected=st.sidebar.multiselect(title,option_list)\n    selected_all=st.sidebar.checkbox(\"Select All\",value=True,key=title)\n    if selected_all:\n        selected_options=option_list\n    else:\n        selected_options=selected\n    return selected_options",
+        "detail": "modules.filters",
+        "documentation": {}
+    },
+    {
+        "label": "display_metrics",
+        "kind": 2,
+        "importPath": "modules.utils",
+        "description": "modules.utils",
+        "peekOfCode": "def display_metrics(df):\n    \"\"\"\n    Display the Key Performance Indicators (KPIs)\n    \"\"\"\n    st.subheader(\"📈 Key Performance Indicators\")\n    col1,col2,col3,col4 = st.columns(4)\n    with col1:\n        total_funding=df['funding_total_usd'].sum()\n        if total_funding > 1000000000:\n            funding=f\"${(total_funding/1000000000):,.3f} B\"",
+        "detail": "modules.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_funding_by_market",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_funding_by_market(df):\n    \"\"\" \n    plot the total funding by market\n    \"\"\"\n    total_funding=df.groupby('market')['funding_total_usd'].sum().reset_index()\n    # top 10 market \n    total_funding=total_funding.sort_values(by=\"funding_total_usd\",ascending=False).head(10)\n    fig=px.bar(total_funding,x='market',y='funding_total_usd',title=\"Top 10 Markets by Total Funding\")\n    return fig\ndef plot_countries_by_funding(df):",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_countries_by_funding",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_countries_by_funding(df):\n    \"\"\" \n    plot the countries by funding \n    \"\"\"\n    countries=df.groupby('country_code')['funding_total_usd'].sum().reset_index()\n    # top 10 countries by funding \n    countries=countries.sort_values(by='funding_total_usd',ascending=False).head(10)\n    fig=px.bar(countries,x='country_code',y='funding_total_usd',title=\"Top 10 Countries by Funding\")\n    return fig \ndef plot_funding_distribution_by_status(df):",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_funding_distribution_by_status",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_funding_distribution_by_status(df):\n    \"\"\" \n    plot the funding distribution by status \n    \"\"\"\n    funding_status_distribution=df.groupby('status')['funding_total_usd'].sum().reset_index()\n    funding_status_distribution=funding_status_distribution.sort_values(by=\"funding_total_usd\",ascending=False)\n    fig=px.pie(funding_status_distribution,color=\"status\",values=\"funding_total_usd\",names=\"status\",title=\"Funding Distribution by Status\")\n    return fig\ndef plot_startup_distribution_by_countries(df):\n    \"\"\" ",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_startup_distribution_by_countries",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_startup_distribution_by_countries(df):\n    \"\"\" \n    plot the number of startup by countries \n    \"\"\"\n    startup_count=df['country_code'].value_counts().reset_index().head(10)\n    # top 10 countries that having the maxium number of startup\n    fig=px.bar(startup_count,x='country_code',y='count',title=\"Number of Startup by Each Country\")\n    return fig\ndef plot_startup_by_state_of_usa(state_counts):\n    \"\"\" ",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_startup_by_state_of_usa",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_startup_by_state_of_usa(state_counts):\n    \"\"\" \n    plot the number of startup by state of usa using the map of usa \n    \"\"\"\n    fig = px.choropleth(\n        state_counts,\n        locations='state_code',  # Column with state codes\n        locationmode='USA-states',  # Set to plot US states\n        color='startup_count',  # Column to determine color\n        scope=\"usa\",  # Limit map to USA",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    }
+]
