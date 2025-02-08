@@ -1,0 +1,6 @@
+streamlit
+plotly
+matplotlib
+seaborn 
+numpy
+streamlit-lottie
