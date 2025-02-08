@@ -184,6 +184,10 @@ Once the app is running, explore different sections of the dashboard:
 
 ---
 
+---
+## **📌 Work Flow of our Project**
+![Flow Chart](assets/Workflow%20(1).png)
+---
 ## **🛠 Technology Stack**  
 | **Technology** | **Purpose** |
 |--------------|------------|
