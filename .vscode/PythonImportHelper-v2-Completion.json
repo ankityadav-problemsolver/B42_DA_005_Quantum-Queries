@@ -285,7 +285,7 @@
         "kind": 2,
         "importPath": "modules.visualizations",
         "description": "modules.visualizations",
-        "peekOfCode": "def plot_startup_distribution_by_countries(df):\n    \"\"\" \n    plot the number of startup by countries \n    \"\"\"\n    startup_count=df['country_code'].value_counts().reset_index().head(10)\n    # top 10 countries that having the maxium number of startup\n    fig=px.bar(startup_count,y='country_code',x='count',title=\"Number of Startup by Each Country\",color_discrete_sequence=['#90EE90'])\n    return fig\ndef plot_startup_by_state_of_usa(state_counts):\n    \"\"\" ",
+        "peekOfCode": "def plot_startup_distribution_by_countries(df):\n    \"\"\" \n    plot the number of startup by countries \n    \"\"\"\n    startup_count=df['country_code'].value_counts().reset_index().head(10)\n    # top 10 countries that having the maxium number of startup\n    fig=px.bar(startup_count,y='country_code',x='count',title=\"Number of Startup by Each Country\",color_discrete_sequence=['#90EE90'])\n    return fig\n@st.cache_resource \ndef plot_startup_by_state_of_usa(state_counts):",
         "detail": "modules.visualizations",
         "documentation": {}
     },

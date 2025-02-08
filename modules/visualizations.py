@@ -1,8 +1,9 @@
 import plotly.express as px 
+import streamlit as st
 import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
-
+@st.cache_resource  #it store the resources so that takes less time to load the dashboard
 def plot_funding_by_market(df):
     """ 
     plot the total funding by market
@@ -36,6 +37,7 @@ def plot_funding_by_market(df):
     # fig=px.bar(total_funding,x='market',y='funding_total_usd',title="Top 10 Markets by Total Funding",color_discrete_sequence=['#90EE90'])
     return fig
 
+@st.cache_resource 
 def plot_countries_by_funding(df):
     """ 
     plot the countries by funding 
@@ -71,6 +73,7 @@ def plot_countries_by_funding(df):
     # fig=px.bar(countries,x='country_code',y='funding_total_usd',title="Top 10 Countries by Funding")
     return fig 
 
+@st.cache_resource 
 def plot_funding_distribution_by_status(df):
     
     """ 
@@ -91,7 +94,8 @@ def plot_funding_distribution_by_status(df):
     pull=[0.05, 0, 0, 0]  # Slightly pull out the first slice for emphasis
 )
     return fig
-       
+  
+@st.cache_resource      
 def plot_startup_distribution_by_countries(df):
     """ 
     plot the number of startup by countries 
@@ -103,6 +107,7 @@ def plot_startup_distribution_by_countries(df):
     fig=px.bar(startup_count,y='country_code',x='count',title="Number of Startup by Each Country",color_discrete_sequence=['#90EE90'])
     return fig
 
+@st.cache_resource 
 def plot_startup_by_state_of_usa(state_counts):
     """ 
     plot the number of startup by state of usa using the map of usa 
@@ -119,7 +124,7 @@ def plot_startup_by_state_of_usa(state_counts):
 
     )
     return fig
-
+@st.cache_resource 
 def plot_3d_heatmaps_in_funding_rounds(df):
     funding_columns=['seed','venture','angel','round_A','round_B','round_C','round_D','round_E','round_F','round_G','round_H','funding_total_usd']
     df_funding=df[funding_columns]
@@ -152,7 +157,7 @@ def plot_3d_heatmaps_in_funding_rounds(df):
         margin=dict(l=20,r=20,b=20,t=50)
     )
     return fig
-
+@st.cache_resource 
 def plot_total_global_funding_by_country(df):
     """ 
     global funding by country in the world map 
@@ -189,7 +194,7 @@ def plot_total_global_funding_by_country(df):
         
     )
     return fig
-
+@st.cache_resource 
 def plot_yearly_funding_trends(df):
     """
     yearly funding trends  
@@ -245,7 +250,7 @@ def plot_yearly_funding_trends(df):
         
     )
     return fig
-
+@st.cache_resource 
 def plot_bubble_funding_growth_per_years(df):
     """ 
     bubble plot funding growth over years 

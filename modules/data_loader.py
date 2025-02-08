@@ -1,7 +1,9 @@
 import pandas as pd 
 import streamlit as st 
-# load the data 
-@st.cache_data  # data is stored in cache memory for the faster data loading 
+# load the data
+# # data is stored in cache memory for the faster data loading 
+# load the data efficiently 
+@st.cache_data
 def load_data():
     """
     Load the data from the csv file
