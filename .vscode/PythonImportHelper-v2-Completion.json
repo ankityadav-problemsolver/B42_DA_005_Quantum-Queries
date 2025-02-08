@@ -344,6 +344,42 @@
         "documentation": {}
     },
     {
+        "label": "selected_country",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "selected_country = filter_data(\"Select Country\", df[\"region\"].dropna().unique()) if \"region\" in df else []\nselected_market = filter_data(\"Select Market or Category\", df[\"market\"].dropna().unique()) if \"market\" in df else []\nselected_country_codes = filter_data(\"Select Country Code\", df[\"country_code\"].dropna().unique()) if \"country_code\" in df else []\nselected_state_codes = filter_data(\"Select State Data\", df[\"state_code\"].dropna().unique()) if \"state_code\" in df else []\nfiltered_data=df[(df['market'].isin(selected_market)) & (df['region'].isin(selected_country)) & (df['state_code'].isin(selected_state_codes)) & (df['country_code'].isin(selected_country_codes))]\n#key metrics for the dashboard\nmodern_metrics(filtered_data) \nst.markdown(\"---\")\n# data visualizations \ncol1,col2=st.columns(2)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "selected_market",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "selected_market = filter_data(\"Select Market or Category\", df[\"market\"].dropna().unique()) if \"market\" in df else []\nselected_country_codes = filter_data(\"Select Country Code\", df[\"country_code\"].dropna().unique()) if \"country_code\" in df else []\nselected_state_codes = filter_data(\"Select State Data\", df[\"state_code\"].dropna().unique()) if \"state_code\" in df else []\nfiltered_data=df[(df['market'].isin(selected_market)) & (df['region'].isin(selected_country)) & (df['state_code'].isin(selected_state_codes)) & (df['country_code'].isin(selected_country_codes))]\n#key metrics for the dashboard\nmodern_metrics(filtered_data) \nst.markdown(\"---\")\n# data visualizations \ncol1,col2=st.columns(2)\nwith col1:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "selected_country_codes",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "selected_country_codes = filter_data(\"Select Country Code\", df[\"country_code\"].dropna().unique()) if \"country_code\" in df else []\nselected_state_codes = filter_data(\"Select State Data\", df[\"state_code\"].dropna().unique()) if \"state_code\" in df else []\nfiltered_data=df[(df['market'].isin(selected_market)) & (df['region'].isin(selected_country)) & (df['state_code'].isin(selected_state_codes)) & (df['country_code'].isin(selected_country_codes))]\n#key metrics for the dashboard\nmodern_metrics(filtered_data) \nst.markdown(\"---\")\n# data visualizations \ncol1,col2=st.columns(2)\nwith col1:\n     # Section for Charts",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "selected_state_codes",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "selected_state_codes = filter_data(\"Select State Data\", df[\"state_code\"].dropna().unique()) if \"state_code\" in df else []\nfiltered_data=df[(df['market'].isin(selected_market)) & (df['region'].isin(selected_country)) & (df['state_code'].isin(selected_state_codes)) & (df['country_code'].isin(selected_country_codes))]\n#key metrics for the dashboard\nmodern_metrics(filtered_data) \nst.markdown(\"---\")\n# data visualizations \ncol1,col2=st.columns(2)\nwith col1:\n     # Section for Charts\n    st.markdown(\"<h2 class='medium-font'>📊 Total Funding By Market</h2>\", unsafe_allow_html=True)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
         "label": "year_filtered_data_line_chart",
         "kind": 5,
         "importPath": "app",

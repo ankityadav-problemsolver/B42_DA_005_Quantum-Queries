@@ -81,12 +81,11 @@ st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 # filter option for the dashboard 
 st.sidebar.title("Filters")
-selected_country=filter_data("Select Country",df['region'].unique())
-selected_market=filter_data("Select Market or Category",df['market'].unique())
-selected_country_codes=filter_data("Select Country Code",df['country_code'].unique())
-selected_state_codes=filter_data("Select State Data",df['state_code'].unique())
+selected_country = filter_data("Select Country", df["region"].dropna().unique()) if "region" in df else []
+selected_market = filter_data("Select Market or Category", df["market"].dropna().unique()) if "market" in df else []
+selected_country_codes = filter_data("Select Country Code", df["country_code"].dropna().unique()) if "country_code" in df else []
+selected_state_codes = filter_data("Select State Data", df["state_code"].dropna().unique()) if "state_code" in df else []
 filtered_data=df[(df['market'].isin(selected_market)) & (df['region'].isin(selected_country)) & (df['state_code'].isin(selected_state_codes)) & (df['country_code'].isin(selected_country_codes))]
-
 
 #key metrics for the dashboard
 modern_metrics(filtered_data) 
