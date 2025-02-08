@@ -8,6 +8,18 @@ def load_data():
     """
     data=pd.read_csv("data/startup_clean_file1.csv")
     
+    # add some cleaning part also 
+    data['first_funding_at'] = pd.to_datetime(data['first_funding_at'], errors='coerce')
+
+     # Extract year
+    data['first_funding_year'] = data['first_funding_at'].dt.year
+    
+    data['last_funding_at'] = pd.to_datetime(data['last_funding_at'], errors='coerce')
+    # extract year 
+    data['last_funding_year'] = data['last_funding_at'].dt.year
+    
+    data['quarter']=data['first_funding_at'].dt.to_period('Q')
+    
     if data is not None:
         return data
     else: 

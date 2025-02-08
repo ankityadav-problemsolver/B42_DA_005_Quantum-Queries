@@ -3,3 +3,4 @@ plotly
 matplotlib
 seaborn 
 numpy
+streamlit-lottie

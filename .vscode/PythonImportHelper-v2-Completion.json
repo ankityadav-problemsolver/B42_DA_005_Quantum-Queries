@@ -18,12 +18,55 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "plotly.express",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "plotly.express",
         "description": "plotly.express",
         "detail": "plotly.express",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.graph_objects",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.graph_objects",
+        "description": "plotly.graph_objects",
+        "detail": "plotly.graph_objects",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "load_lottie_url",
+        "importPath": "modules.lottie_animation",
+        "description": "modules.lottie_animation",
+        "isExtraImport": true,
+        "detail": "modules.lottie_animation",
+        "documentation": {}
+    },
+    {
+        "label": "st_lottie",
+        "importPath": "streamlit_lottie",
+        "description": "streamlit_lottie",
+        "isExtraImport": true,
+        "detail": "streamlit_lottie",
         "documentation": {}
     },
     {
@@ -35,19 +78,35 @@
         "documentation": {}
     },
     {
-        "label": "display_metrics",
-        "importPath": "modules.utils",
-        "description": "modules.utils",
-        "isExtraImport": true,
-        "detail": "modules.utils",
-        "documentation": {}
-    },
-    {
         "label": "filter_data",
         "importPath": "modules.filters",
         "description": "modules.filters",
         "isExtraImport": true,
         "detail": "modules.filters",
+        "documentation": {}
+    },
+    {
+        "label": "modern_metrics",
+        "importPath": "modules.modrendesign_kpi",
+        "description": "modules.modrendesign_kpi",
+        "isExtraImport": true,
+        "detail": "modules.modrendesign_kpi",
+        "documentation": {}
+    },
+    {
+        "label": "plot_3d_heatmaps_in_funding_rounds",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_bubble_funding_growth_per_years",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
         "documentation": {}
     },
     {
@@ -91,6 +150,22 @@
         "documentation": {}
     },
     {
+        "label": "plot_total_global_funding_by_country",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_yearly_funding_trends",
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "isExtraImport": true,
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
         "label": "load_usa_data",
         "importPath": "modules.data_usa_load",
         "description": "modules.data_usa_load",
@@ -103,7 +178,7 @@
         "kind": 2,
         "importPath": "modules.data_loader",
         "description": "modules.data_loader",
-        "peekOfCode": "def load_data():\n    \"\"\"\n    Load the data from the csv file\n    \"\"\"\n    data=pd.read_csv(\"data/startup_clean_file1.csv\")\n    if data is not None:\n        return data\n    else: \n        return \"No data found\"",
+        "peekOfCode": "def load_data():\n    \"\"\"\n    Load the data from the csv file\n    \"\"\"\n    data=pd.read_csv(\"data/startup_clean_file1.csv\")\n    # add some cleaning part also \n    data['first_funding_at'] = pd.to_datetime(data['first_funding_at'], errors='coerce')\n     # Extract year\n    data['first_funding_year'] = data['first_funding_at'].dt.year\n    data['last_funding_at'] = pd.to_datetime(data['last_funding_at'], errors='coerce')",
         "detail": "modules.data_loader",
         "documentation": {}
     },
@@ -126,11 +201,38 @@
         "documentation": {}
     },
     {
+        "label": "load_lottie_url",
+        "kind": 2,
+        "importPath": "modules.lottie_animation",
+        "description": "modules.lottie_animation",
+        "peekOfCode": "def load_lottie_url(filepath):\n    # filepath present locally in the system \n    with open(filepath,\"r\") as f:\n        return json.load(f)",
+        "detail": "modules.lottie_animation",
+        "documentation": {}
+    },
+    {
+        "label": "modern_metrics",
+        "kind": 2,
+        "importPath": "modules.modrendesign_kpi",
+        "description": "modules.modrendesign_kpi",
+        "peekOfCode": "def modern_metrics(df):\n    # compute all kpi data dynamically \n    total_funding=df['funding_total_usd'].sum()/1e9 #convert into billions\n    total_startups=df.shape[0]\n    avg_funding=df['funding_total_usd'].mean()/1e6 # convert into millions\n    total_startup_in_india=df[df['country_code']=='IND']['name'].shape[0]\n    venture_amount_in_india=df[df['country_code']=='IND']['venture'].sum() / 1e6 # convert into millions\n    venture_amount_in_USA=df[df['country_code']=='USA']['venture'].sum() / 1e6 # convert into millions\n    funding_type=df.iloc[:,12:]\n    # most_common_funding_type=df[funding_type].mode()[0]",
+        "detail": "modules.modrendesign_kpi",
+        "documentation": {}
+    },
+    {
         "label": "display_metrics",
         "kind": 2,
         "importPath": "modules.utils",
         "description": "modules.utils",
-        "peekOfCode": "def display_metrics(df):\n    \"\"\"\n    Display the Key Performance Indicators (KPIs)\n    \"\"\"\n    st.subheader(\"📈 Key Performance Indicators\")\n    col1,col2,col3,col4 = st.columns(4)\n    with col1:\n        total_funding=df['funding_total_usd'].sum()\n        if total_funding > 1000000000:\n            funding=f\"${(total_funding/1000000000):,.3f} B\"",
+        "peekOfCode": "def display_metrics(df):\n    \"\"\"\n    Display the Key Performance Indicators (KPIs)\n    \"\"\"\n    st.subheader(\"📈 Key Performance Indicators\")\n    col1,col2,col3,col4= st.columns(4)\n    with col1:\n        total_funding=df['funding_total_usd'].sum()\n        if total_funding > 1000000000:\n            funding=f\"${(total_funding/1000000000):,.3f} B\"",
+        "detail": "modules.utils",
+        "documentation": {}
+    },
+    {
+        "label": "fixed_matrix",
+        "kind": 2,
+        "importPath": "modules.utils",
+        "description": "modules.utils",
+        "peekOfCode": "def fixed_matrix(df):\n    col9,col10,col11=st.columns(3)\n    with col9:\n        market_ind_name = df[df['country_code']==\"IND\"]['market'].value_counts().idxmax()\n        st.metric(label=\"Most Famous Market Segment in IND\",value=market_ind_name)\n    with col10:\n        market_us_name = df[df['country_code']==\"USA\"]['market'].value_counts().idxmax()\n        st.metric(label=\"Most Famous market  Segment in USA\",value=market_us_name)\n    with col11:\n        market_us_name = df[df['country_code']==\"CHN\"]['market'].value_counts().idxmax()",
         "detail": "modules.utils",
         "documentation": {}
     },
@@ -139,7 +241,7 @@
         "kind": 2,
         "importPath": "modules.visualizations",
         "description": "modules.visualizations",
-        "peekOfCode": "def plot_funding_by_market(df):\n    \"\"\" \n    plot the total funding by market\n    \"\"\"\n    total_funding=df.groupby('market')['funding_total_usd'].sum().reset_index()\n    # top 10 market \n    total_funding=total_funding.sort_values(by=\"funding_total_usd\",ascending=False).head(10)\n    fig=px.bar(total_funding,x='market',y='funding_total_usd',title=\"Top 10 Markets by Total Funding\")\n    return fig\ndef plot_countries_by_funding(df):",
+        "peekOfCode": "def plot_funding_by_market(df):\n    \"\"\" \n    plot the total funding by market\n    \"\"\"\n    total_funding=df.groupby('market')['funding_total_usd'].sum().reset_index()\n    # top 10 market \n    total_funding=total_funding.sort_values(by=\"funding_total_usd\",ascending=False).head(10)\n    # for 3d graph we use the graph objects in plotly \n    fig=go.Figure()\n    fig.add_trace(go.Bar(",
         "detail": "modules.visualizations",
         "documentation": {}
     },
@@ -148,7 +250,7 @@
         "kind": 2,
         "importPath": "modules.visualizations",
         "description": "modules.visualizations",
-        "peekOfCode": "def plot_countries_by_funding(df):\n    \"\"\" \n    plot the countries by funding \n    \"\"\"\n    countries=df.groupby('country_code')['funding_total_usd'].sum().reset_index()\n    # top 10 countries by funding \n    countries=countries.sort_values(by='funding_total_usd',ascending=False).head(10)\n    fig=px.bar(countries,x='country_code',y='funding_total_usd',title=\"Top 10 Countries by Funding\")\n    return fig \ndef plot_funding_distribution_by_status(df):",
+        "peekOfCode": "def plot_countries_by_funding(df):\n    \"\"\" \n    plot the countries by funding \n    \"\"\"\n    countries=df.groupby('country_code')['funding_total_usd'].sum().reset_index()\n    # top 10 countries by funding \n    countries=countries.sort_values(by='funding_total_usd',ascending=False).head(10)\n    fig=go.Figure()\n    fig.add_trace(go.Bar(\n        x=countries['country_code'],",
         "detail": "modules.visualizations",
         "documentation": {}
     },
@@ -157,7 +259,7 @@
         "kind": 2,
         "importPath": "modules.visualizations",
         "description": "modules.visualizations",
-        "peekOfCode": "def plot_funding_distribution_by_status(df):\n    \"\"\" \n    plot the funding distribution by status \n    \"\"\"\n    funding_status_distribution=df.groupby('status')['funding_total_usd'].sum().reset_index()\n    funding_status_distribution=funding_status_distribution.sort_values(by=\"funding_total_usd\",ascending=False)\n    fig=px.pie(funding_status_distribution,color=\"status\",values=\"funding_total_usd\",names=\"status\",title=\"Funding Distribution by Status\")\n    return fig\ndef plot_startup_distribution_by_countries(df):\n    \"\"\" ",
+        "peekOfCode": "def plot_funding_distribution_by_status(df):\n    \"\"\" \n    plot the funding distribution by status \n    \"\"\"\n    funding_status_distribution=df.groupby('status')['funding_total_usd'].sum().reset_index()\n    funding_status_distribution=funding_status_distribution.sort_values(by=\"funding_total_usd\",ascending=False)\n    fig=px.pie(funding_status_distribution,\n               color=\"status\",\n               values=\"funding_total_usd\",\n               names=\"status\",title=\"Funding Distribution by Status\",",
         "detail": "modules.visualizations",
         "documentation": {}
     },
@@ -166,7 +268,7 @@
         "kind": 2,
         "importPath": "modules.visualizations",
         "description": "modules.visualizations",
-        "peekOfCode": "def plot_startup_distribution_by_countries(df):\n    \"\"\" \n    plot the number of startup by countries \n    \"\"\"\n    startup_count=df['country_code'].value_counts().reset_index().head(10)\n    # top 10 countries that having the maxium number of startup\n    fig=px.bar(startup_count,x='country_code',y='count',title=\"Number of Startup by Each Country\")\n    return fig\ndef plot_startup_by_state_of_usa(state_counts):\n    \"\"\" ",
+        "peekOfCode": "def plot_startup_distribution_by_countries(df):\n    \"\"\" \n    plot the number of startup by countries \n    \"\"\"\n    startup_count=df['country_code'].value_counts().reset_index().head(10)\n    # top 10 countries that having the maxium number of startup\n    fig=px.bar(startup_count,y='country_code',x='count',title=\"Number of Startup by Each Country\",color_discrete_sequence=['#90EE90'])\n    return fig\ndef plot_startup_by_state_of_usa(state_counts):\n    \"\"\" ",
         "detail": "modules.visualizations",
         "documentation": {}
     },
@@ -175,8 +277,62 @@
         "kind": 2,
         "importPath": "modules.visualizations",
         "description": "modules.visualizations",
-        "peekOfCode": "def plot_startup_by_state_of_usa(state_counts):\n    \"\"\" \n    plot the number of startup by state of usa using the map of usa \n    \"\"\"\n    fig = px.choropleth(\n        state_counts,\n        locations='state_code',  # Column with state codes\n        locationmode='USA-states',  # Set to plot US states\n        color='startup_count',  # Column to determine color\n        scope=\"usa\",  # Limit map to USA",
+        "peekOfCode": "def plot_startup_by_state_of_usa(state_counts):\n    \"\"\" \n    plot the number of startup by state of usa using the map of usa \n    \"\"\"\n    fig = px.choropleth(\n        state_counts,\n        locations='state_code',  #   # Column in 'state_counts' that contains state codes (like 'CA' for California, 'TX' for Texas)\n        locationmode='USA-states',  # Tells Plotly to map based on USA state codes\n        color='startup_count',  # Column to determine color\n        scope=\"usa\",  # Limit map to USA",
         "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_3d_heatmaps_in_funding_rounds",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_3d_heatmaps_in_funding_rounds(df):\n    funding_columns=['seed','venture','angel','round_A','round_B','round_C','round_D','round_E','round_F','round_G','round_H','funding_total_usd']\n    df_funding=df[funding_columns]\n    # find the value of correlation cofficient values \n    corr_matrix=df_funding.corr()\n    columns=corr_matrix.columns\n    values=corr_matrix.values\n    # create the pyramid structure for the visulizations \n    x,y=np.meshgrid(np.arange(len(columns)),np.arange(len(columns)))\n    z=np.triu(values) # keep only values in the triangngular shapes ",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_total_global_funding_by_country",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_total_global_funding_by_country(df):\n    \"\"\" \n    global funding by country in the world map \n    \"\"\"\n    funding_by_country=df.groupby('country_code')['funding_total_usd'].sum().reset_index()\n    fig=px.choropleth(funding_by_country,\n                  locations='country_code',\n                  title=\"Total Funding by Country\",\n                  color=\"funding_total_usd\",\n                  hover_name=\"country_code\",",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_yearly_funding_trends",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_yearly_funding_trends(df):\n    \"\"\"\n    yearly funding trends  \n    \"\"\"\n    # yearly funding trends \n    funding_yearly=df.groupby('first_funding_year')['funding_total_usd'].sum().reset_index()\n    # recent funding year \n    last_funding_year=df['first_funding_year'].max()\n    # funding values or amount \n    last_funding_amount=funding_yearly[funding_yearly['first_funding_year']==last_funding_year]['funding_total_usd'].values[0]",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "plot_bubble_funding_growth_per_years",
+        "kind": 2,
+        "importPath": "modules.visualizations",
+        "description": "modules.visualizations",
+        "peekOfCode": "def plot_bubble_funding_growth_per_years(df):\n    \"\"\" \n    bubble plot funding growth over years \n    \"\"\"\n    df['market']=df['market'].fillna(\"Unknown\")\n    fig=px.scatter(\n        df,\n        x=\"first_funding_year\",\n        y='funding_total_usd',\n        size=\"funding_total_usd\",",
+        "detail": "modules.visualizations",
+        "documentation": {}
+    },
+    {
+        "label": "year_filtered_data_line_chart",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "year_filtered_data_line_chart = df[(df[\"first_funding_year\"] >= start_year) & (df[\"first_funding_year\"] <= end_year)]\nst.plotly_chart(plot_yearly_funding_trends(year_filtered_data_line_chart),use_container_width=True)\nst.markdown(\"📊 Summary:This analysis tracks funding patterns over the years, helping investors identify growth trends, market fluctuations, and emerging investment opportunities.\")\nst.markdown(\"---\")\n# funding growth per year \nst.markdown(\"<h2 class='medium-font'>📊 Funding Growth by Years</h2>\", unsafe_allow_html=True)\nstart_year, end_year = st.slider(\"Select Year Range for Growth\", \n                                 min_value=df[\"first_funding_year\"].min(), \n                                 max_value=df[\"first_funding_year\"].max(), \n                                 value=(df[\"first_funding_year\"].min(), df[\"first_funding_year\"].max()))",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "year_filtered_data",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "year_filtered_data = df[(df[\"first_funding_year\"] >= start_year) & (df[\"first_funding_year\"] <= end_year)]\nst.plotly_chart(plot_bubble_funding_growth_per_years(year_filtered_data),use_container_width=True) \nst.markdown(\"📊 Summary:This analysis highlights the yearly funding growth, showcasing trends in investment increases, market expansion, and sector-wise funding shifts over time.\")\n# footer section of my Dashboard \nst.markdown(\"---\")\ncol5,col6=st.columns([1.5,2])\nwith col5:\n    st.subheader(\"About the Project\")\n    st.markdown(\"\"\"\n                This **Startup Investments Analysis Dashboard** provides insights into startup funding trends, ",
+        "detail": "app",
         "documentation": {}
     }
 ]
