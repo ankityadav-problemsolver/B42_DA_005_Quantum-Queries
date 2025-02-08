@@ -8,10 +8,11 @@
 
 ---
 
-## **📌 Table of Contents**  
+# Table of Contents  
+
 - [**Startup Investment Analysis** 🚀](#startup-investment-analysis-)
     - [A Data-Driven Approach to Understanding Startup Funding](#a-data-driven-approach-to-understanding-startup-funding)
-  - [**📌 Table of Contents**](#-table-of-contents)
+- [Table of Contents](#table-of-contents)
   - [**🚀 Introduction**](#-introduction)
   - [**🛠️ Project Type**](#️-project-type)
   - [](#)
@@ -213,10 +214,14 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
+
 ## **📩 Stay Connected**  
-🔗 **GitHub Repository** → ![Github](https://github.com/ankityadav-problemsolver/B42_DA_005_Quantum-Queries)  
-📩 **Contact Us** → ankitofficial151@gmail.com  
-📌 **Follow us on LinkedIn** → ![Linkedin](https://www.linkedin.com/in/ankityadav-datasolver/) 
+
+🔗 **GitHub Repository** → [![GitHub](https://img.shields.io/badge/GitHub-Quantum%20Queries-blue?logo=github)](https://github.com/ankityadav-problemsolver/B42_DA_005_Quantum-Queries)  
+
+📩 **Contact Us** → [![Email](https://img.shields.io/badge/Email-ankitofficial151%40gmail.com-red?logo=gmail)](mailto:ankitofficial151@gmail.com)  
+
+📌 **Follow us on LinkedIn** → [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ankit%20Yadav-blue?logo=linkedin)](https://www.linkedin.com/in/ankityadav-datasolver/)  
 
 ---
 
