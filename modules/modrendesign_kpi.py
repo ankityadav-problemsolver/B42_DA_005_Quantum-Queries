@@ -1,7 +1,8 @@
 import streamlit as st
+from modules.style_css import apply_custom_styles
+  # call the custome styling function 
 
 def modern_metrics(df):
-    
     # compute all kpi data dynamically 
     total_funding=df['funding_total_usd'].sum()/1e9 #convert into billions
     total_startups=df.shape[0]
@@ -12,26 +13,39 @@ def modern_metrics(df):
     funding_type=df.iloc[:,12:]
     # most_common_funding_type=df[funding_type].mode()[0]
     # Custom Styling
+   
     st.markdown("""
         <style>
-        .big-font { font-size:30px !important; font-weight: bold; color: #00c8ff; }
-        .medium-font { font-size:24px !important; font-weight: bold; color: #ffa500; }
-        .small-font { font-size:20px !important; color: #ffffff; }
+        .big-font {
+            font-size: 30px !important;
+            font-weight: bold;
+            color: #00c8ff !important;
+        }
+        .medium-font {
+            font-size: 24px !important;
+            font-weight: bold;
+            color: #ffa500 !important;
+        }
+        .small-font {
+            font-size: 20px !important;
+            # color: #ffffff;
+            color:#FF8C42;
+        }
         .metric-box {
-            background-color: #222831; 
-            padding: 15px; 
-            border-radius: 10px; 
-            text-align: center; 
+            background-color: #222831;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
             color: white;
         }
         </style>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True
+    )
 
+    
     # Header
-    st.markdown("<h1 class='big-font'>📊 Data Investment Analytics Dashboard</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='big-font'>📌 Key Performance Indicators(KPI) </h1>", unsafe_allow_html=True)
 
-    # Key Performance Indicators Section
-    st.markdown("<h2 class='medium-font'>📌 Key Performance Indicators</h2>", unsafe_allow_html=True)
 
     # Create a Layout with Columns
     col1, col2, col3 = st.columns(3)

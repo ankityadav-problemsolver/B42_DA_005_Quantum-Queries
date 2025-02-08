@@ -27,6 +27,14 @@
         "documentation": {}
     },
     {
+        "label": "apply_custom_styles",
+        "importPath": "modules.style_css",
+        "description": "modules.style_css",
+        "isExtraImport": true,
+        "detail": "modules.style_css",
+        "documentation": {}
+    },
+    {
         "label": "plotly.express",
         "kind": 6,
         "isExtraImport": true,
@@ -219,6 +227,15 @@
         "documentation": {}
     },
     {
+        "label": "apply_custom_styles",
+        "kind": 2,
+        "importPath": "modules.style_css",
+        "description": "modules.style_css",
+        "peekOfCode": "def apply_custom_styles():\n     st.markdown(\"\"\"\n        <style>\n        .big-font { \n            font-size: 30px !important; \n            font-weight: bold; \n            color: #00c8ff; \n        }\n        .medium-font { \n            font-size: 24px !important; ",
+        "detail": "modules.style_css",
+        "documentation": {}
+    },
+    {
         "label": "display_metrics",
         "kind": 2,
         "importPath": "modules.utils",
@@ -331,7 +348,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "year_filtered_data = df[(df[\"first_funding_year\"] >= start_year) & (df[\"first_funding_year\"] <= end_year)]\nst.plotly_chart(plot_bubble_funding_growth_per_years(year_filtered_data),use_container_width=True) \nst.markdown(\"📊 Summary:This analysis highlights the yearly funding growth, showcasing trends in investment increases, market expansion, and sector-wise funding shifts over time.\")\n# footer section of my Dashboard \nst.markdown(\"---\")\ncol5,col6=st.columns([1.5,2])\nwith col5:\n    st.subheader(\"About the Project\")\n    st.markdown(\"\"\"\n                This **Startup Investments Analysis Dashboard** provides insights into startup funding trends, ",
+        "peekOfCode": "year_filtered_data = df[(df[\"first_funding_year\"] >= start_year) & (df[\"first_funding_year\"] <= end_year)]\nst.plotly_chart(plot_bubble_funding_growth_per_years(year_filtered_data),use_container_width=True) \nst.markdown(\"📊 Summary:This analysis highlights the yearly funding growth, showcasing trends in investment increases, market expansion, and sector-wise funding shifts over time.\")\n# footer section of my Dashboard \nst.markdown(\"---\")\ncol5,col6=st.columns([1.5,2])\nwith col5:\n    st.markdown(\"<h3 class='medium-font'>About the Project</h3>\",unsafe_allow_html=True)\n    st.markdown(\"\"\"\n                This **Startup Investments Analysis Dashboard** provides insights into startup funding trends, ",
         "detail": "app",
         "documentation": {}
     }

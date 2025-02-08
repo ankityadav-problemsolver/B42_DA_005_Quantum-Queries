@@ -22,21 +22,62 @@ st.set_page_config(page_title="Startup Dashboard",layout="wide",page_icon=":char
 
 df=load_data() 
 # title of the dashboard
+# custom style for title 
+
+# Inject CSS to Style st.title()
+st.markdown("""
+    <style>
+    /* Custom Style for st.title() */
+    div[data-testid="stAppViewContainer"] h1 {
+        color: #00c8ff !important;  /* Bright Cyan */
+        font-size: 42px !important;
+        font-weight: bold !important;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgba(0, 200, 255, 0.5);
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# Use st.title()
+
 st.title("📊 Startup Investment Analytics Dashboard")
 
 
 # Sidebar Title with Custom Styling
 st.sidebar.markdown("""
-    <h2 style="
-        color: #FF8518; 
+    <style>
+    .sidebar-title {
+        color: #FF8518;  /* Vibrant Orange */
         text-align: center; 
         font-size: 26px;
         font-weight: bold;
-    ">🏆 Quantum Queries</h2>
+        padding: 10px 5px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #FF8518, #FF5733);
+        box-shadow: 2px 2px 5px rgba(255, 133, 24, 0.5);
+        border: 2px solid #ffffff;
+        margin-bottom: 20px; /* Adds space below the title */
+    }
+    </style>
+    <h2 class="sidebar-title">🏆 Quantum Queries</h2>
     """, unsafe_allow_html=True)
-
 # on side bar add the logo of the project 
-st.sidebar.image("assets/logo.webp",width=160)
+st.sidebar.markdown("""
+    <style>
+    .sidebar-logo {
+        display: block;
+        margin: 5px auto;  /* Adds space above and centers the logo */
+        padding: 10px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown('<div class="sidebar-logo">', unsafe_allow_html=True)
+st.sidebar.image("assets/logo.webp", width=160)
+st.sidebar.markdown('</div>', unsafe_allow_html=True)
+
+
+
 
 # filter option for the dashboard 
 st.sidebar.title("Filters")
@@ -137,7 +178,7 @@ st.markdown("📊 Summary:This analysis highlights the yearly funding growth, sh
 st.markdown("---")
 col5,col6=st.columns([1.5,2])
 with col5:
-    st.subheader("About the Project")
+    st.markdown("<h3 class='medium-font'>About the Project</h3>",unsafe_allow_html=True)
     st.markdown("""
                 
                 This **Startup Investments Analysis Dashboard** provides insights into startup funding trends, 
@@ -145,7 +186,8 @@ with col5:
             data-driven decisions.           
                 """)
 
-    st.subheader("Team Members")
+    st.markdown("<h3 class='medium-font'>Team Members</h3>",unsafe_allow_html=True)
+    
     st.markdown("""
                 "I sincerely appreciate everyone's dedication, teamwork, and hard work in making this project a success. It was a pleasure leading such a motivated team and seeing our collective efforts come to life. Looking forward to more collaborations and achievements together!" 🚀👏
                 - **Ankit**
