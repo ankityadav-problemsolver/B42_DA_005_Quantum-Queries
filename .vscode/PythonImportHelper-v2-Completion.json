@@ -195,7 +195,7 @@
         "kind": 2,
         "importPath": "modules.data_loader",
         "description": "modules.data_loader",
-        "peekOfCode": "def load_data():\n    \"\"\"\n    Load the data from the csv file\n    \"\"\"\n    file_path = \"data/startup_clean_file1.csv\"\n    if os.path.exists(file_path):\n       df = pd.read_csv(file_path)\n       print(\"File loaded successfully!\")\n       # add some cleaning part also \n       df['first_funding_at'] = pd.to_datetime(df['first_funding_at'], errors='coerce')",
+        "peekOfCode": "def load_data():\n    \"\"\"\n    Load the data from the csv file\n    \"\"\"\n    file_path = \"./data/Cleaned_investment.csv\"\n    if os.path.exists(file_path):\n       df = pd.read_csv(file_path,encoding=\"utf-8\")\n       print(\"File loaded successfully!\")\n       # add some cleaning part also \n       df['first_funding_at'] = pd.to_datetime(df['first_funding_at'], errors='coerce')",
         "detail": "modules.data_loader",
         "documentation": {}
     },

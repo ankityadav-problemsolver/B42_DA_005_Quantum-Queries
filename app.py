@@ -47,13 +47,13 @@ st.title("📊 Startup Investment Analytics Dashboard")
 st.sidebar.markdown("""
     <style>
     .sidebar-title {
-        color: #FF8518;  /* Vibrant Orange */
+        color: #FFFFFF; /* Vibrant Orange */ 
         text-align: center; 
         font-size: 26px;
         font-weight: bold;
         padding: 10px 5px;
         border-radius: 8px;
-        background: linear-gradient(90deg, #FF8518, #FF5733);
+        background: linear-gradient(90deg, rgba(255, 133, 19, 0.9), rgba(255, 87, 51, 0.9));
         box-shadow: 2px 2px 5px rgba(255, 133, 24, 0.5);
         border: 2px solid #ffffff;
         margin-bottom: 20px; /* Adds space below the title */
@@ -80,7 +80,8 @@ st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 
 # filter option for the dashboard 
-st.sidebar.title("Filters")
+st.sidebar.title("Filters") 
+
 selected_country = filter_data("Select Country", df["region"].dropna().unique()) if "region" in df else []
 selected_market = filter_data("Select Market or Category", df["market"].dropna().unique()) if "market" in df else []
 selected_country_codes = filter_data("Select Country Code", df["country_code"].dropna().unique()) if "country_code" in df else []

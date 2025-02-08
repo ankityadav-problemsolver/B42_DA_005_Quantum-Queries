@@ -12,10 +12,10 @@ def load_data():
     
     
 
-    file_path = "data/startup_clean_file1.csv"
+    file_path = "./data/Cleaned_investment.csv"
 
     if os.path.exists(file_path):
-       df = pd.read_csv(file_path)
+       df = pd.read_csv(file_path,encoding="utf-8")
        print("File loaded successfully!")
        # add some cleaning part also 
        df['first_funding_at'] = pd.to_datetime(df['first_funding_at'], errors='coerce')
