@@ -200,7 +200,10 @@ def plot_yearly_funding_trends(df):
     yearly funding trends  
     """
     
-    # yearly funding trends 
+    
+    
+    
+     # yearly funding trends 
     funding_yearly=df.groupby('first_funding_year')['funding_total_usd'].sum().reset_index()
     
     # recent funding year 

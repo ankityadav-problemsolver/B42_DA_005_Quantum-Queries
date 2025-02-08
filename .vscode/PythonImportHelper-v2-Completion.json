@@ -18,6 +18,15 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -186,7 +195,7 @@
         "kind": 2,
         "importPath": "modules.data_loader",
         "description": "modules.data_loader",
-        "peekOfCode": "def load_data():\n    \"\"\"\n    Load the data from the csv file\n    \"\"\"\n    data=pd.read_csv(\"data/startup_clean_file1.csv\")\n    # add some cleaning part also \n    data['first_funding_at'] = pd.to_datetime(data['first_funding_at'], errors='coerce')\n     # Extract year\n    data['first_funding_year'] = data['first_funding_at'].dt.year\n    data['last_funding_at'] = pd.to_datetime(data['last_funding_at'], errors='coerce')",
+        "peekOfCode": "def load_data():\n    \"\"\"\n    Load the data from the csv file\n    \"\"\"\n    file_path = \"data/startup_clean_file1.csv\"\n    if os.path.exists(file_path):\n       df = pd.read_csv(file_path)\n       print(\"File loaded successfully!\")\n       # add some cleaning part also \n       df['first_funding_at'] = pd.to_datetime(df['first_funding_at'], errors='coerce')",
         "detail": "modules.data_loader",
         "documentation": {}
     },
@@ -321,7 +330,7 @@
         "kind": 2,
         "importPath": "modules.visualizations",
         "description": "modules.visualizations",
-        "peekOfCode": "def plot_yearly_funding_trends(df):\n    \"\"\"\n    yearly funding trends  \n    \"\"\"\n    # yearly funding trends \n    funding_yearly=df.groupby('first_funding_year')['funding_total_usd'].sum().reset_index()\n    # recent funding year \n    last_funding_year=df['first_funding_year'].max()\n    # funding values or amount \n    last_funding_amount=funding_yearly[funding_yearly['first_funding_year']==last_funding_year]['funding_total_usd'].values[0]",
+        "peekOfCode": "def plot_yearly_funding_trends(df):\n    \"\"\"\n    yearly funding trends  \n    \"\"\"\n     # yearly funding trends \n    funding_yearly=df.groupby('first_funding_year')['funding_total_usd'].sum().reset_index()\n    # recent funding year \n    last_funding_year=df['first_funding_year'].max()\n    # funding values or amount \n    last_funding_amount=funding_yearly[funding_yearly['first_funding_year']==last_funding_year]['funding_total_usd'].values[0]",
         "detail": "modules.visualizations",
         "documentation": {}
     },
