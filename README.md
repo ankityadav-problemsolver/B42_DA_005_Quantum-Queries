@@ -62,6 +62,11 @@
 
 ---
 
+---
+## **📌 Work Flow of our Project**
+![Flow Chart](assets/Workflow%20(1).png)
+---
+
 ## **🚀 Introduction**  
 **Startup Investment Analysis** is a data analytics project by **Quantum Queries**, designed to uncover insights from startup funding data. Our interactive dashboard helps investors, entrepreneurs, and analysts make data-driven decisions by visualizing key trends such as:  
 
@@ -184,10 +189,7 @@ Once the app is running, explore different sections of the dashboard:
 
 ---
 
----
-## **📌 Work Flow of our Project**
-![Flow Chart](assets/Workflow%20(1).png)
----
+
 ## **🛠 Technology Stack**  
 | **Technology** | **Purpose** |
 |--------------|------------|
