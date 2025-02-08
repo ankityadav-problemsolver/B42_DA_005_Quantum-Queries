@@ -9,38 +9,58 @@
 ---
 
 # Table of Contents  
+# Table of Contents  
 
-- [**Startup Investment Analysis** 🚀](#startup-investment-analysis-)
-    - [A Data-Driven Approach to Understanding Startup Funding](#a-data-driven-approach-to-understanding-startup-funding)
-- [Table of Contents](#table-of-contents)
-  - [**🚀 Introduction**](#-introduction)
-  - [**🛠️ Project Type**](#️-project-type)
-  - [](#)
-  - [**🌍 Live Demo**](#-live-demo)
-  - [**📂 Project Structure**](#-project-structure)
-  - [](#-1)
-  - [**📺 Video Walkthrough**](#-video-walkthrough)
-  - [**✨ Features**](#-features)
-    - [📊 **Key Performance Indicators(KPI)**](#-key-performance-indicatorskpi)
-    - [📊 **Country By Total Funding**](#-country-by-total-funding)
-    - [📊 **Total Funding By Market**](#-total-funding-by-market)
-    - [📊 **Investment Growth Over Time**](#-investment-growth-over-time)
-  - [🌍 **Geographic Investment Map**](#-geographic-investment-map)
-  - [**🎯 Design Decisions \& Assumptions**](#-design-decisions--assumptions)
-  - [**🛠 Installation \& Setup**](#-installation--setup)
-    - [**📌 Prerequisites**](#-prerequisites)
-    - [**📥 Clone the Repository**](#-clone-the-repository)
-    - [**📦 Install Dependencies**](#-install-dependencies)
-    - [**▶️ Run the Streamlit App**](#️-run-the-streamlit-app)
-  - [**📌 Usage Guide**](#-usage-guide)
-  - [**🛠 Technology Stack**](#-technology-stack)
-  - [**📊 APIs \& Datasets**](#-apis--datasets)
-  - [🚀 **Future Enhancements**](#-future-enhancements)
-  - [**🤝 Contribution Guide**](#-contribution-guide)
-  - [**👨‍💻 Team Members**](#-team-members)
-  - [**📜 License**](#-license)
-  - [**📩 Stay Connected**](#-stay-connected)
-    - [**🚀 Ready to Explore Startup Investment Trends?**](#-ready-to-explore-startup-investment-trends)
+## **📖 Table of Contents**  
+
+### **1️⃣ Executive Summary**  
+- Overview of the Project  
+- Key Insights & Business Impact  
+
+### **2️⃣ Project Scope & Objectives**  
+- Problem Statement  
+- Objectives & Expected Outcomes  
+- Target Audience  
+
+### **3️⃣ Methodology & Approach**  
+- Data Collection & Processing  
+- Analytical Framework  
+- Visualization & Insights  
+
+### **4️⃣ Key Findings & Analysis**  
+- Market Trends  
+- Investment Distribution  
+- Growth Trajectory  
+
+### **5️⃣ Features & Functionalities**  
+- KPI Dashboard  
+- Geographic Investment Map  
+- Time-Series Funding Analysis  
+- Sector-Wise Investment Trends  
+
+### **6️⃣ Technology Stack & Architecture**  
+- Tools & Libraries Used  
+- Data Pipeline Overview  
+
+### **7️⃣ Implementation Guide**  
+- Installation & Setup  
+- Step-by-Step Usage Guide  
+
+### **8️⃣ Future Enhancements & Scalability**  
+- Planned Features  
+- Potential Use Cases  
+
+### **9️⃣ Contribution Guidelines**  
+- How to Contribute  
+- Code of Conduct  
+
+### **🔟 Team & Contact Information**  
+- Project Contributors  
+- Connect with Us  
+
+### **🔖 License & Compliance**  
+- License Information  
+- Compliance & Data Privacy  
 
 ---
 
