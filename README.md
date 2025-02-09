@@ -113,7 +113,7 @@ We leverage **Python, Jupyter Notebook, Pandas, NumPy, Plotly, and Streamlit** t
 
 ## **📺 Video Walkthrough**  
 🎥 **Project Walkthrough:** [Dashboard Video](https://www.awesomescreenshot.com/video/36397183?key=f858030c80a0d057a9372aa7079a24b0)  
-🎥 **Codebase Walkthrough:**[CodeBase Video](assets/09.02.2025_10.07.52_REC.mp4) 
+🎥 **Codebase Walkthrough:**[CodeBase Video](https://screenrec.com/share/TN9WCkZRvI) 
 
 ---
 
