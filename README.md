@@ -1,7 +1,9 @@
 # **Startup Investment Analysis** 🚀  
+
+### 🔗 [Live Demo](https://quantumqueries.streamlit.app/)   
 ### A Data-Driven Approach to Understanding Startup Funding  
 
-![Startup Investment Analysis](https://media.istockphoto.com/id/1488294044/photo/businessman-works-on-laptop-showing-business-analytics-dashboard-with-charts-metrics-and-kpi.jpg?b=1&s=612x612&w=0&k=20&c=9mHYdWeiReHhmicdUf5FH2JICVPk3Uiks3MIn1Fkaz8=)  
+![Startup Investment Analysis](https://img.freepik.com/free-photo/data-analysis-marketing-business-report-concept_53876-124759.jpg?uid=R180844500&ga=GA1.1.54599852.1735366506&semt=ais_incoming)  
 
 🔍 **An interactive data analytics dashboard to explore and visualize startup investment trends.**  
  📊*A Data Analytics Project by Team Quantum Queries*  
@@ -84,7 +86,7 @@ We leverage **Python, Jupyter Notebook, Pandas, NumPy, Plotly, and Streamlit** t
 
 ## **🛠️ Project Type**  
 🔹 **Data Analytics**  
-🔹 **Dashboard Development**  
+🔹 **Dashboard Development** 
 ![Animation](assets/Animation%20-%201739040292239.gif)
 ---
 
